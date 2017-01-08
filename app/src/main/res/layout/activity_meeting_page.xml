@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+
+    <TextView
+        android:id="@+id/TodayIsLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/todayisMeeting"
+        android:textSize="94sp" />
+
+    <TextView
+        android:id="@+id/explanationMeeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/explanationMeeting"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/dateMeeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dateMeeting"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/dateNumberMeeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="09/01/16"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/changebuttonmeeting"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:onClick="onclick"
+            android:text="@string/Change" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/schoolDateMeeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Daynumber"
+            android:textSize="25sp" />
+
+        <Spinner
+            android:id="@+id/dayschooseMeeting"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+
+        </Spinner>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/gobuttonmeeting"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="@string/Go" />
+</LinearLayout>
+
+
+
+
+
+
