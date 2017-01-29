@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,8 +17,8 @@ import android.widget.TextView;
 
 public class MeetingPage extends AppCompatActivity {
 
-    private static final String START_DAY_KEY = "TodayIs.StartDay";
-    private static final String START_DATE_KEY = "TodayIs.StartDate";
+    public static final String START_DAY_KEY = "TodayIs.StartDay";
+    public static final String START_DATE_KEY = "TodayIs.StartDate";
 
     int DIALOG_DATE = 1;
     int myYear = 2016;
@@ -55,6 +56,9 @@ public class MeetingPage extends AppCompatActivity {
                         .putString(START_DAY_KEY, daynumber)
                         .putString(START_DATE_KEY, date)
                         .apply();
+
+                Intent intent = new Intent(MeetingPage.this, MainScreen.class);
+                startActivity(intent);
 
             }
         });
@@ -108,7 +112,7 @@ public class MeetingPage extends AppCompatActivity {
         public void onDateSet(DatePicker view, int year, int monthOfYear,
                               int dayOfMonth) {
             myYear = year;
-            myMonth = monthOfYear;
+            myMonth = monthOfYear+1;
             myDay = dayOfMonth;
             dateNumberMeeting.setText(myMonth + "/" + myDay + "/" + myYear);
 
