@@ -13,19 +13,20 @@ public class StartingRedirection extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Model model = Model.INSTANCE;
+        SharedPreferences sharedPreferences = getSharedPreferences("MeetingPage", Context.MODE_PRIVATE);
+
+        ModelPersistence.persistModel(model, sharedPreferences);
+
         setContentView(R.layout.activity_starting_redirection);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("MeetingPage", Context.MODE_PRIVATE);
-        boolean DateExictance = sharedPreferences.contains(START_DAY_KEY);
-
-        if (DateExictance) {
+        if (model.isInitialized()) {
             Intent intent = new Intent(StartingRedirection.this, MainScreen.class);
             startActivity(intent);
         } else {
-                Intent intent = new Intent(StartingRedirection.this, MeetingPage.class);
-                startActivity(intent);
-            }
-
-
+            Intent intent = new Intent(StartingRedirection.this, MeetingPage.class);
+            startActivity(intent);
         }
     }
+}

@@ -18,11 +18,16 @@ import static com.todayisapp.todayisapp.MeetingPage.START_DATE_KEY;
 import static com.todayisapp.todayisapp.MeetingPage.START_DAY_KEY;
 
 public class MainScreen extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
+
+        Model m = ...;
+
+        int x = m.getCurrentDayNumber();
+        m.setStartDayNumber(x);
+
 
         try {
             SharedPreferences sharedPreferences = getSharedPreferences("MeetingPage", Context.MODE_PRIVATE);
