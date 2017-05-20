@@ -9,13 +9,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MeetingPage">
+
+        </activity>
+        <activity android:name=".MainScreen" />
+        <activity android:name=".MenuScreen" />
+        <activity android:name=".StartingRedirection">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainScreen"></activity>
     </application>
 
 </manifest>

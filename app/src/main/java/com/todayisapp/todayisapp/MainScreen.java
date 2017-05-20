@@ -1,9 +1,12 @@
 package com.todayisapp.todayisapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.text.ParseException;
@@ -43,15 +46,34 @@ public class MainScreen extends AppCompatActivity {
             textView.setText(TodayDay);
         } catch (ParseException e) {
             //// todo process error
+
+
+
+
+
         }
+        Button button = (Button) findViewById(R.id.menubutton);
+        button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainScreen.this, MenuScreen.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
+
+
+
 
     public static int knowDay(int startDay, Calendar startDate) {
         Calendar now = Calendar.getInstance();
         long nowMil = now.getTimeInMillis();
         long startMil = startDate.getTimeInMillis();
         long difMil = nowMil - startMil;
-        int difDays = (int) (difMil * 84600);
+        int difDays = (int) (difMil / 86400000);
         int boomx = difDays % 6;
         int ResDay = startDay + boomx;
         if (ResDay > 6) {

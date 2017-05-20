@@ -73,6 +73,7 @@ public class MeetingPage extends AppCompatActivity {
         TextView textView = (TextView) findViewById(R.id.dateNumberMeeting);
         textView.setText(date);
 
+
     }
 
     private int findIndex(ArrayAdapter<CharSequence> adapter, String todayday) {
